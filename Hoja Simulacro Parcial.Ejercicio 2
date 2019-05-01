@@ -1,0 +1,120 @@
+//Hoja Simulacro Parcial.Ejercicio 2
+#include <conio.h>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	//RESTRICCIONES
+	//variables pertenecen a {A, B, C, G, entero positivo, C, T, U}
+
+
+	//ENTRADA
+	char lugarIngreso = 'X';
+	char tipoDispositivo;
+	int horaIngreso;
+
+	int sumA = 0;
+	int sumB = 0;
+	int sumC = 0;
+
+	int sumMadrugada = 0;
+	int sumMañana = 0;
+	int sumTarde = 0;
+	int sumNoche = 0;
+
+	int sumCelular = 0;
+	int sumTablet = 0;
+	int sumComputador = 0;
+
+	//LOGICA
+	while (1) {
+
+		cout << "Lugar Ingreso [A, B o C]: ";
+		cin >> lugarIngreso;
+		if (toupper(lugarIngreso) == 'G') {
+			break;
+		}
+
+		switch (lugarIngreso)
+		{
+		case 'A':
+			sumA++;
+			break;
+		case 'B':
+			sumB++;
+			break;
+		case 'C':
+			sumC++;
+			break;
+		default:
+			cout << "Por favor ingrese un lugar de ingreso correcto. ";
+			break;
+		}
+
+		cout << "Hora Ingreso: ";
+		cin >> horaIngreso;
+		if (horaIngreso >= 0 && horaIngreso <= 5) {
+			sumMadrugada++;
+		}
+		else {
+			if (horaIngreso >= 6 && horaIngreso <= 12) {
+				sumMañana++;
+			}
+			else {
+				if (horaIngreso >= 13 && horaIngreso <= 17) {
+					sumTarde++;
+				}
+				else {
+					if (horaIngreso >= 18 && horaIngreso <= 23) {
+						sumNoche++;
+					}
+					else {
+						cout << "Por favor ingrese una hora dentro del rango 0-23 ";
+					}
+				}
+			}
+		}
+
+		cout << "Tipo Dispositivo [C, T o U]: ";
+		cin >> tipoDispositivo;
+		switch (tipoDispositivo)
+		{
+		case 'C':
+			sumCelular++;
+			break;
+		case 'T':
+			sumTablet++;
+			break;
+		case 'U':
+			sumComputador++;
+			break;
+		default:
+			cout << "Por favor ingrese un tipo de dispositivo correcto. ";
+			break;
+		}
+		
+        //SALIDA
+		cout << "************************************" << endl;
+		cout << "Lugar Ingreso: " << endl;
+		cout << "Lima " << sumA << endl;
+		cout << "Otra region " << sumB << endl;
+		cout << "Otro pais " << sumC << endl;
+
+		cout << "************************************" << endl;
+		cout << "Hora Ingreso: " << endl;
+		cout << "Madrugada " << sumMadrugada << endl;
+		cout << "Manana " << sumMañana << endl;
+		cout << "Tarde " << sumTarde << endl;
+		cout << "Noche " << sumNoche << endl;
+
+		cout << "************************************" << endl;
+		cout << "Tipo dispositivo: " << endl;
+		cout << "Celular " << sumCelular << endl;
+		cout << "Tablet " << sumTablet << endl;
+		cout << "Computador " << sumComputador << endl;
+
+		_getch();
+	}
+}
