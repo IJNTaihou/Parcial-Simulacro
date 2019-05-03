@@ -1,1 +1,64 @@
+#include <iostream>
+#include <conio.h>
 
+using namespace std;
+
+int main()
+{
+	//ENTRADA
+    int k;
+	float a;
+	float e;
+	int i;
+	int z;
+	int n1;
+
+	e = 0;
+	i = 1;
+	z = 1;
+
+	/*RESTRICCIONES
+
+	*/
+
+
+	//LOGICA Y SALIDA
+    printf("La serie e^a es 1 + a + a^2/2! + a^3/3! + ......");
+
+	do
+	{
+		printf("Ingrese k: ");
+		cin >> k;
+
+		if (k > 0 && k <= 20)
+		{
+			printf("Ingrese a: ");
+			cin >> a;
+
+			while (i <= k)
+			{
+				if (i == 1)
+				{
+					e = 1;
+					i++;
+					continue;
+				}
+				z = z * (i - 1);
+				e = e + (pow(a, i - 1) / z);
+				i++;
+			}
+			cout << "El resultado de ea sera: " << e;   
+
+			_getch();
+			return 0;
+
+		}
+		else
+		{
+			printf("ERROR! \n");
+			n1 = 1;
+		}
+	} while (n1 == 1);
+
+	_getch();
+}
