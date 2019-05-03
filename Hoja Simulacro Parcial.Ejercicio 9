@@ -1,1 +1,45 @@
+//Hoja Simulacro Parcial.Ejercicio 9
+#include <conio.h>
+#include <iostream>
 
+using namespace std;
+
+int main()
+{
+	//ENTRADA
+
+	int n;
+	float a, b;
+	float suma = 0;
+
+	//LOGICA Y SALIDA
+    while(1)
+	{
+		cout << "Ingrese el valor de N: ";
+		cin >> n;
+		if (0 < n)
+		{
+			cout << "Ingrese el valor de a: ";
+			cin >> a;
+			if ((1 <= a) && (a <= 5))
+			{
+				cout << "Ingrese el valor de b: ";
+				cin >> b;
+
+				for (int i = 0; i <= n; i++)
+				{
+					suma = suma + (pow(a, i * b) / pow(2, i));
+
+				}
+				cout << "Resultado : " << suma - 1 << endl << endl;
+
+			}
+			else
+			{
+				cout << "Dato incorrectos" << endl << endl;
+			}
+		}
+	}
+
+	_getch();
+}
